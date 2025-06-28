@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import ROUTES from "@/constants/routes";
 import { Button } from "@/components/ui/button";
-import NavLinks from "./NavLinks";
+import NavLinks from "./navbar/NavLinks";
 import { auth, signOut } from "@/auth";
 
 const LeftSidebar = async () => {

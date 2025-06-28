@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { sidebarLinks, NavLinkType } from "@/constants";
+import { sidebarLinks } from "@/constants";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
@@ -10,19 +10,26 @@ import { SheetClose } from "@/components/ui/sheet";
 
 const NavLinks = ({ isMobileNav = false }: { isMobileNav?: boolean }) => {
   const pathname = usePathname();
-  const userId = 1;
+  const userId: number = 1;
+
+  const resolvedLinks = sidebarLinks
+    .filter((link) => link.label !== "Profile" || userId)
+    .map((link) => {
+      if (link.label === "Profile" && typeof link.route === "function") {
+        return { ...link, route: link.route(userId) };
+      }
+      return link;
+    })
+    .filter((link) => typeof link.route === "string");
 
   return (
     <>
-      {sidebarLinks.map((link: NavLinkType) => {
+      {resolvedLinks.map((link) => {
         const isActive =
-          (pathname.includes(link.route) && link.route.length > 1) ||
+          (typeof link.route === "string" &&
+            pathname.includes(link.route) &&
+            link.route.length > 1) ||
           pathname === link.route;
-
-        if (link.route === "/profile") {
-          if (userId) link.route = `${link.route}/${userId}`;
-          else return null;
-        }
 
         const LinkComponent = (
           <Link

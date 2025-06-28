@@ -1,9 +1,6 @@
 import ROUTES from "./routes";
 
-export type NavLinkType = { imgUrl: string; label: string; route: string };
-type LinksArrayType = NavLinkType[];
-
-export const sidebarLinks: LinksArrayType = [
+export const sidebarLinks = [
   {
     imgUrl: "/icons/home.svg",
     label: "Home",
