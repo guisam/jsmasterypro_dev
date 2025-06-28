@@ -34,7 +34,7 @@ const AuthForm = <T extends FieldValues>({
 
   const form = useForm<z.infer<typeof SignInSchema>>({
     resolver: zodResolver(SignInSchema),
-    defaultValues: defaultValues,
+    defaultValues,
   });
 
   return (
@@ -56,7 +56,7 @@ const AuthForm = <T extends FieldValues>({
                   <Input
                     required
                     type={field.name === "password" ? "password" : "text"}
-                    className="paragraph-regular background-light900_dark300 light-border-2 text-dark300_light700 no-focus min-h-12 rounded-1.5 border "
+                    className="paragraph-regular background-light900_dark300 light-border-2 text-dark300_light700 no-focus rounded-1.5 min-h-12 border"
                     {...field}
                   />
                 </FormControl>
@@ -68,7 +68,7 @@ const AuthForm = <T extends FieldValues>({
 
         <Button
           disabled={form.formState.isSubmitting}
-          className="primary-gradient paragraph-medium min-h-12 w-full rounded-2 px-4 py-3 font-inter !text-light-900"
+          className="primary-gradient paragraph-medium rounded-2 font-inter !text-light-900 min-h-12 w-full px-4 py-3"
         >
           {form.formState.isSubmitting ? "Signing In..." : "Sign In"}
         </Button>
