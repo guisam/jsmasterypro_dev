@@ -30,9 +30,11 @@ const LeftSidebar = async () => {
                 alt="Logout Icon"
                 width={20}
                 height={20}
-                className="invert-colors mr-2.5 object-contain"
+                className="invert-colors lg:hidden"
               />
-              <span className="primary-text-gradient">Log Out</span>
+              <span className="primary-text-gradient max-lg:hidden">
+                Log Out
+              </span>
             </Button>
           </form>
         ) : (
