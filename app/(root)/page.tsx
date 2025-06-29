@@ -7,39 +7,39 @@ import QuestionCard from "@/components/cards/QuestionCard";
 
 const questions = [
   {
-    _id: 1,
+    _id: "1",
     title: "How to learn React?",
     description: "I am new to React and need some guidance.",
     tags: [
-      { _id: 1, name: "React" },
-      { _id: 2, name: "JavaScript" },
+      { _id: "1", name: "React" },
+      { _id: "2", name: "JavaScript" },
     ],
     author: {
-      _id: 1,
+      _id: "1",
       name: "Juana Dominguez",
       image:
         "https://static.vecteezy.com/system/resources/thumbnails/001/993/889/small/beautiful-latin-woman-avatar-character-icon-free-vector.jpg",
     },
-    createdAt: Date.now(),
+    createdAt: new Date(),
     upvotes: 10,
     answers: 5,
     views: 100,
   },
   {
-    _id: 2,
+    _id: "2",
     title: "What is the best way to learn Next.js?",
     description: "Looking for resources and tips to get started with Next.js.",
     tags: [
-      { _id: 3, name: "JavaScript" },
-      { _id: 4, name: "Web Development" },
+      { _id: "2", name: "JavaScript" },
+      { _id: "4", name: "Web Development" },
     ],
     author: {
-      _id: 1,
-      name: "Jimena Dominguez",
+      _id: "2",
+      name: "Jessica Dominguez",
       image:
         "https://static.vecteezy.com/system/resources/thumbnails/001/993/889/small/beautiful-latin-woman-avatar-character-icon-free-vector.jpg",
     },
-    createdAt: "2025-04-01T12:00:00Z",
+    createdAt: new Date("2025-04-01T12:00:00Z"),
     upvotes: 10,
     answers: 5,
     views: 100,
