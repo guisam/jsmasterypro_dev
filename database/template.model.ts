@@ -2,7 +2,7 @@ import { model, models, Schema, Types } from "mongoose";
 
 export interface IModel {}
 
-const ModelSchema = new Schema({}, { timestamps: true });
+const ModelSchema = new Schema<IModel>({}, { timestamps: true });
 
 const Model = models?.Model || model<IModel>("Model", ModelSchema);
 
